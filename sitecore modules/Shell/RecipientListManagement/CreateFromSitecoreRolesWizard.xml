@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense" xmlns:html="http://www.sitecore.net/microsoft/htmlcontrols">
+    <RecipientListManagement.CreateFromSitecoreRoles>
+    <WizardForm CodeBeside="RecipientListManagement.RecipientsLists.Lists.Creation.CreateFromSitecoreRolesWizard,RecipientListManagement">
+
+      <style type="text/css">
+        th.scListviewViewDetailsHeader
+        {
+        display:none;
+        }
+
+        #RolesBox div
+        {
+        padding-bottom: 2px;
+        }
+      </style>
+
+      <WizardFormFirstPage ID="FirstPage" Icon="People/32x32/users_into.png">
+        <Border Class="scWizardWelcomeTitle">
+          <Literal Text="Welcome to the Create List from List Wizard" />
+        </Border>
+        <Literal Text="In ECM, a list typically contains members. The members reside in either an opt in role or an opt out role." />
+
+        <Literal Text="Use this wizard to create a list and then add members who currently reside in other Sitecore roles." />
+        <Literal Text="The steps in this wizard are:" />
+        <ul>
+          <li class="scWizardBullet">
+            <Literal Text="Provide a name for the list" />
+          </li>
+          <li class="scWizardBullet">
+            <Literal Text="Select the Sitecore roles to import to the current list" />
+          </li>
+          <li class="scWizardBullet">
+            <Literal Text="Import the role(s)" />
+          </li>          
+        </ul>
+      </WizardFormFirstPage>
+
+      <WizardFormPage ID="SelectName" Header="List Name" Text="Provide a name for the list" Icon="People/32x32/users_into.png">
+        <WizardFormPadding>
+          <GridPanel Width="100%" VAlign="top" Cellspacing="4" >
+
+            <Label Header="Name:" GridPanel.VAlign="top" />
+            <Edit ID="RecipientListName" GridPanel.Width="100%" Width="100%" />
+            <Space Height="15"/>
+            <Label Style="font-size: 8pt;" Header="* Note: when you create this list, the system will create opt-out role for the list. Default opt-in role may also be created, if you do not select any Sitecore roles at the next step. The newly created roles will contain the list name above.
+" />
+
+          </GridPanel>
+        </WizardFormPadding>
+      </WizardFormPage>
+
+      <WizardFormPage ID="SelectRoles" Header="Select Roles" Text="Select the Sitecore roles to import to the current list" Icon="People/32x32/users_into.png">
+        <WizardFormPadding>
+
+          <Border Style="padding: 0px 30px;">
+           
+              <Label Header="Security Roles:" ToolTip="Sitecore roles to import to the current list" GridPanel.Colspan="2"/>
+
+              <Scrollbox Height="126" Backgroud="white" Border="1px solid #ADADAD" Padding="0" >
+                <Border ID="RolesBox" Padding="3px" />
+              </Scrollbox>
+
+              <Edit ID="RoleList" Visible="false" />
+            
+            <Button Header="Add more roles" Class="" Style="width: 100px; height: 30px;  margin-top: 10px; float: right;" Click="SelectRoles_Click"/>
+          </Border>
+        </WizardFormPadding>
+      </WizardFormPage>
+
+      <WizardFormLastPage ID="Finish" Icon="People/32x32/users_into.png">
+        <GridPanel Width="100%">
+          <Literal Text="The List has been created successfully." />
+
+          <Border>
+            <Space Height="14px" />
+          </Border>
+          
+        </GridPanel>
+      </WizardFormLastPage>
+
+    </WizardForm>
+  </RecipientListManagement.CreateFromSitecoreRoles>
+</control>

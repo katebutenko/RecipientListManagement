@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense">
+  <RecipientListManagement.AddRecipientsFromCSVWizard>
+    <WizardForm CodeBeside="RecipientListManagement.RecipientsLists.Lists.Creation.AddFromCSV.AddRecipientsFromCSVWizard,RecipientListManagement">
+
+      <style type="text/css">
+        th.scListviewViewDetailsHeader
+        {
+        display:none;
+        }
+
+        #RolesBox div
+        {
+        padding-bottom: 2px;
+        }
+      </style>
+      
+      <WizardFormPage ID="SelectFile" Header="File to Import" Text="Select the CSV file that contains the recipient information that you want to import. This file must be in .csv format." Icon="People/32x32/users_into.png">
+        <WizardFormPadding>
+          <GridPanel Width="100%" VAlign="top" Cellspacing="4" >
+
+            <Label Header="File Name:" GridPanel.VAlign="top" />
+
+            <GridPanel GridPanel.VAlign="top" Columns="3" Width="100%">
+              <Edit ID="Filename" GridPanel.Width="100%" Width="100%" ReadOnly="true" />
+              <Space Width="6px" />
+
+              <Border Width="75px" GridPanel.Width="75px">
+                <Border Style="position: relative;">
+                  <Frame ID="UploadFileFrame" Height="26px" Style="position: relative; -moz-opacity:0; filter:alpha(opacity: 0);	opacity: 0;	z-index: 2;" SourceUri="/sitecore modules/shell/EmailCampaign/UI/Dialogs/UploadFile.aspx"/>
+                  <button class="scButton" type="button" Style="position: absolute; top: 1px; left: 0px; z-index: 1;">
+                    <Literal Text="Browse" />
+                  </button>
+                </Border>
+              </Border>
+            </GridPanel>
+
+          </GridPanel>
+        </WizardFormPadding>
+      </WizardFormPage>
+
+      <WizardFormPage ID="Fields" Header="Fields" Text="Select the fields that you want to import and the fields that you want to map them to." Icon="People/32x32/users_into.png">
+        <WizardFormPadding>
+          <Scrollbox ID="FieldsSection" Border="0" Style="background: transparent;">
+            <GridPanel Width="100%" VAlign="top" Cellspacing="8" Columns="3" >
+
+              <Label Header="From:" GridPanel.Width="50%" />
+              <Label Header="To:" GridPanel.Width="50%" />
+              <Border Height="16" Width="16" />
+
+            </GridPanel>
+          </Scrollbox>
+        </WizardFormPadding>
+      </WizardFormPage>
+
+      <WizardFormPage ID="SecurityDomain" Header="Domain" Text="Select the security domain that you want to add new recipients to." Icon="People/32x32/users_into.png" >
+        <WizardFormPadding>
+          <GridPanel Width="100%" VAlign="top" Cellspacing="4" >
+
+            <Label Header="Domain:" />
+            <TraceableCombobox ID="DomainCombobox" SelectOnly="true"  Visible="false" Change="DomainComboboxChanged" Width="100%" />
+
+            <GridPanel ID="DomainPanel" GridPanel.VAlign="top"  Columns="2" Visible="false">
+              <Edit ID="DomainInput" GridPanel.Width="100%" Width="100%" ReadOnly="true" />
+              <Border>
+                <Space Width="4px" />
+                <Button Header="Select" Click="SelectDomain_Click" />
+              </Border>
+            </GridPanel>
+
+            <Space Height="30"/>
+
+            <Label Header="If a record in the file contains an e-mail address that already exists:" />
+
+            <GridPanel Cellspacing="0">
+              <Radiobutton ID="SkipUser" Name="Conflict" Value="SkipUser" Header="Skip the record." Checked="true" />
+              <Radiobutton ID="OverwriteProperties" Name="Conflict" Value="OverwriteProperties" Header="Overwrite existing profile fields." />
+              <Radiobutton ID="StoreProperties" Name="Conflict" Value="StoreProperties" Header="Only store data in empty profile fields." />
+            </GridPanel>
+
+          </GridPanel>
+        </WizardFormPadding>
+      </WizardFormPage>
+
+      <WizardFormPage ID="Importing" Header="Importing Recipients" Text="Importing recipients." Icon="People/32x32/users_into.png">
+        <WizardFormPadding>
+          <GridPanel Width="100%" VAlign="Top">
+            <Space Height="64" />
+            <Border Align="center">
+              <ThemedImage Src="People/32x32/users_into.png" Width="48" Height="48" />
+            </Border>
+            <Space Height="16" />
+            <Border Align="center">
+              <ThemedImage Src="Images/progress.gif" Width="94" Height="17" />
+            </Border>
+            <Space Height="16" />
+            <Border Align="center" >
+              <Literal Text="Importing..." Style="font-weight:bold"/>
+            </Border>
+          </GridPanel>
+        </WizardFormPadding>
+      </WizardFormPage>
+
+      <WizardFormLastPage ID="Finish" Icon="People/32x32/users_into.png">
+        <GridPanel Width="100%">
+          <Literal Text="The recipient information has been imported successfully." />
+
+          <Border>
+            <Space Height="14px" />
+          </Border>
+
+          <Border ID="Results">
+            <GridPanel Columns="2" Cellspacing="6" Valign="top">
+              <Literal Text="Recipients imported:"/>
+              <Literal ID="NumImported" />
+
+              <Border GridPanel.Colspan="2">
+                <Space Height="8px" />
+              </Border>
+
+              <Literal ID="SkippedText" Text="Records skipped:" GridPanel.Colspan="2" />
+
+              <Literal Text="E-mail address already exists:" Style="padding-left: 14px;"/>
+              <Literal ID="NumEmailExists" />
+
+              <Literal Text="E-mail address not provided:" Style="padding-left: 14px;"/>
+              <Literal ID="NumNoEmail" />
+
+              <Literal Text="Users not imported as required fields not available:" Style="padding-left: 14px;"/>
+              <Literal ID="NumBroken" />
+            </GridPanel>
+          </Border>
+        </GridPanel>
+      </WizardFormLastPage>
+
+    </WizardForm>
+  </RecipientListManagement.AddRecipientsFromCSVWizard>
+</control>

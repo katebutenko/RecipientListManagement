@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F64B42FC-B2CB-4B9D-A67D-FECC53361D4F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RecipientListManagement</RootNamespace>
+    <AssemblyName>RecipientListManagement</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\Sitecores\forRecipientListManagement\Website\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ComponentArt.Web.UI, Version=2010.1.2637.35, Culture=neutral, PublicKeyToken=9bc9f846553156bb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Sitecore dlls\ComponentArt.Web.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Analytics, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Sitecore dlls\Sitecore.Analytics.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Automation.MarketingAutomation, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Sitecore dlls\Sitecore.Automation.MarketingAutomation.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Client, Version=6.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Sitecore dlls\Sitecore.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Client.Extensions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Sitecore dlls\Sitecore.Client.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.EmailCampaign, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Sitecore dlls\Sitecore.EmailCampaign.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.EmailCampaign.App, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Sitecore dlls\Sitecore.EmailCampaign.App.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.EmailCampaign.Data, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Sitecore dlls\Sitecore.EmailCampaign.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.EmailCampaign.Domain, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Sitecore dlls\Sitecore.EmailCampaign.Domain.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Kernel, Version=6.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Sitecore dlls\Sitecore.Kernel.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Speak, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Sitecore dlls\Sitecore.Speak.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CSVExport\AllEmailCampaigns\ExportAction.cs" />
+    <Compile Include="CSVExport\AvevaCSVExportHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GeneralControls\CustomizedActions.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GeneralControls\CustomizedDetailList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GeneralControls\ObjectDetailList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GeneralControls\ObjectDetailListObserver.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RecipientsLists\Lists\Creation\CSVFile.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LimitedUserView\AbTestMessageRepository.cs" />
+    <Compile Include="LimitedUserView\BestMessagesRepository.cs" />
+    <Compile Include="LimitedUserView\DispatchedMessageRepository.cs" />
+    <Compile Include="LimitedUserView\ExportUsersWizard.cs" />
+    <Compile Include="LimitedUserView\LimitedDashboard.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LimitedUserView\MessageLinkColumn.cs" />
+    <Compile Include="LimitedUserView\MessageStateRepository.cs" />
+    <Compile Include="LimitedUserView\RecentlyDispatchedRepository.cs" />
+    <Compile Include="LimitedUserView\TrickleRepository.cs" />
+    <Compile Include="RecipientsLists\Lists\BuildRecipientListGroup.cs" />
+    <Compile Include="RecipientsLists\Lists\Actions\AddFromCSV\AddRecipientsFromCSVCommand.cs" />
+    <Compile Include="RecipientsLists\Lists\Actions\AddFromCSV\AddRecipientsFromCSVWizard.cs" />
+    <Compile Include="RecipientsLists\Lists\Actions\AddSitecoreRoles\AddSitecoreRolesToSelectedListCommand.cs" />
+    <Compile Include="RecipientsLists\Lists\Actions\AddSitecoreRoles\SelectRolesPage.cs" />
+    <Compile Include="RecipientsLists\Lists\Actions\DeleteSelectedList.cs" />
+    <Compile Include="RecipientsLists\Lists\Actions\RenameSelectedListCommand.cs" />
+    <Compile Include="RecipientsLists\Lists\Creation\CreateEmptyListCommand.cs" />
+    <Compile Include="RecipientsLists\Lists\Creation\CreateFromSitecoreRolesWizard.cs" />
+    <Compile Include="RecipientsLists\Lists\Creation\CreateFromSitecoreRolesCommand.cs" />
+    <Compile Include="RecipientsLists\Lists\Creation\CreateNewRecipientListFromCSVCommand.cs" />
+    <Compile Include="RecipientsLists\Lists\Creation\ImportUsersWizard.cs" />
+    <Compile Include="RecipientsLists\Lists\MessageEventArgs.cs" />
+    <Compile Include="RecipientsLists\Lists\RecipientListInfo.cs" />
+    <Compile Include="RecipientsLists\Lists\RecipientListsObjectDetailList.cs" />
+    <Compile Include="RecipientsLists\Lists\RecipientsListsRepository.cs" />
+    <Compile Include="RecipientsLists\Users\Actions\RemoveUserFromList.cs" />
+    <Compile Include="RecipientsLists\Users\Actions\EditSelectedUser.cs" />
+    <Compile Include="RecipientsLists\Users\UsersInListObjectDetailList.cs" />
+    <Compile Include="RecipientsLists\Users\UsersInListRepository.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="CSVExport\AllEmailCampaigns\AnalyticsExtensions\AnalyticsSQLDataGatewayExtensions.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
